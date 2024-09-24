@@ -32,7 +32,7 @@ def convert_path(filepath):
 
 def main():
   
-    details ="\nThe operating System is "+ os.name +" And runining on "+ system+ " Platform"
+    details ="\nThe operating System is "+ os.name +" And running on "+ system+ " Platform"
     print (details)
     """
     Gets the user's file path and converts it based on the OS. 
