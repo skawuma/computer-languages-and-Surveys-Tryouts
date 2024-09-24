@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+    <h2>Enter the number to Know whether it is Prime or Not </h2>
+
+    <p>Please input a number</p>
+
+    <input id="numb">
+
+    <button type="button" onclick="myFunction()">Submit</button>
+
+    <p id="demo"></p>
+
+    <script>
+
+        //Function to check No is Prime or Not
+
+        function prime(num) {
+
+            var c = 0, i, t;
+
+            for (i = 1; i <= num; i++) {
+
+                if (num % i == 0) {
+
+                    c = c + 1;
+
+                }
+
+            }
+
+            if (c == 2) // As Prime is divided by only one and itself and 1 then its divisors count is 2
+
+            {
+
+                t = true;
+
+            }
+
+            else {
+
+                t = false;
+
+            }
+
+            return t;
+
+        }
+
+        function myFunction() {
+
+            var x, text = "Please Enter number between 1 to 30";
+
+            // Get the value of the input field with id="numb"
+
+            x = document.getElementById("numb").value;
+
+            // If x is Not a Number or less than one or greater than 10
+
+            if (x > 1 && x <= 30) // number is checked within range
+
+            {
+
+                document.getElementById("demo").innerHTML = prime(x);// number is passed to function prime
+
+            }
+
+            else {
+
+                document.getElementById("demo").innerHTML = text;
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

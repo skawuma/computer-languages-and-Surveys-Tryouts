@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html>
+
+<head>
+ <!-- Represents a  checkPrime function.
+ @author Samuel Kawuma
+ @version 1.5
+ @date 9/18/24 -->
+    <title>Input and Output Example</title>
+    <script>
+
+        function checkPrime(num) {
+            if (num <= 1) {
+                return false;
+            }
+            for (
+                let i = 2;
+                i <= Math.sqrt(num); i++
+            ) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function myfunction() {
+            var num, text = "Please Enter number between 2 to 9999";
+            num = document.getElementById("input-id").value;
+            var result = checkPrime(num);
+            if (num > 1 && num <= 9999) // number is checked within range
+
+                if (result) {
+                    document.getElementById("demo").innerHTML = num + " is a prime number.";
+                    document.getElementById("demo").style.color = "red";
+                } else {
+                    document.getElementById("demo").innerHTML = num + " is not a prime number.";
+                    document.getElementById("demo").style.color = "blue";
+                }
+            else {
+
+                document.getElementById("demo").innerHTML = text;
+                document.getElementById("demo").style.color = "green";
+
+            }
+            // Refresh the page after a delay of 3 seconds
+            setTimeout(function () {
+                location.reload();
+            }, 3000);
+
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1  style="color:red" text-align:center;>Prime Checker</h1>
+        <label>Enter A number from 2 to 9999:</label>
+    
+        <input type="number" id="input-id"> <br> <br>
+        <button onclick="myfunction()">Submit</button>
+        <p id="demo">I'm waiting...</p>
+    </div>
+  
+</body>
